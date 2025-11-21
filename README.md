@@ -1,4 +1,4 @@
-[alanmcginnis.com](https://alanmcginnis.com)
+[alanmcginnis.com](https://alanmcginnis.com) | [![Netlify Status](https://api.netlify.com/api/v1/badges/ec126828-9270-47c8-9add-758b2290d841/deploy-status)](https://app.netlify.com/projects/upbeat-hawking-b95108/deploys)
 
 Based on [Astro Nano](https://github.com/markhorn-dev/astro-nano)
 
