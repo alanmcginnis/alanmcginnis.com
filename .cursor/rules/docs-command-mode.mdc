@@ -1,0 +1,35 @@
+---
+description: Docs Command Mode (always-on guardrail)
+globs:
+alwaysApply: true
+---
+
+Goal
+- When the active task involves documentation commands (checklists, runbooks, playbooks) under docs/notes/commands or docs/commands, do not modify code. Only surface the explicit files the command references so the user can review and decide next steps.
+
+High-priority rules
+- Never edit, generate, reformat, or reorganize source code, configs, migrations, or data when operating from a command doc. Stay read-only until the user explicitly opts in to apply changes.
+- Do not run terminals/CLI, database migrations, or background tasks from command docs. Read-only exploration only.
+- Respond by listing the explicit file paths referenced by the command doc. Use absolute paths rooted at the workspace when available.
+- If a command doc does not clearly enumerate files, ask for clarification rather than guessing. Some commands may require more context and explicit review by the user.
+- If a command references a directory or wildcard (e.g., “review src/components/**”), ask the user to confirm the narrowed, explicit files before proceeding.
+- Do not suggest edits, diffs, or refactors while in this mode; defer changes until the user explicitly says to apply/fix/execute.
+- Do not auto-fix linter/style issues or “small obvious bugs” during this mode.
+
+Detection (when to enter Docs Command Mode)
+- The focused/open file is in docs/notes/commands/** or docs/commands/**.
+- The user asks to “run” or “use” a command/checklist from the docs.
+- The query indicates we are following a procedure from a command doc.
+
+Output format while in Docs Command Mode
+- Provide:
+  1) “Files to open” – a bullet list of explicit file paths (prefer absolute paths) directly mentioned by the command doc.
+  2) “Questions” – any clarifying questions needed to disambiguate missing context.
+- Avoid proposing code edits or showing code changes. It’s OK to cite lines strictly for navigation/context, but do not propose modifications.
+
+Exiting Docs Command Mode
+- Only exit when the user explicitly instructs to “apply changes”, “execute fixes”, or otherwise authorizes edits. Then resume normal editing rules.
+
+General safety
+- If unsure whether we’re in Docs Command Mode, assume we are and ask for confirmation.
+- Prefer smallest-scope, read-only actions first. Never assume permission to write.

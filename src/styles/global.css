@@ -1,0 +1,123 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@source "src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}";
+
+@theme {
+  --default-font-family: "Atkinson Hyperlegible Next", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-sans: "Atkinson Hyperlegible Next", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+@variant dark (&:where(.dark, .dark *));
+
+html {
+  overflow-y: scroll;
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-family-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  background-color: color-mix(in srgb, var(--color-stone-200) 80%, var(--color-stone-100) 20%);
+  color: color-mix(in srgb, var(--color-black) 90%, transparent);
+}
+
+body:where(.dark, .dark *) {
+  /* background-color: var(--color-gray-950); */
+  background-color: color-mix(in srgb, var(--color-gray-950) 95%, var(--color-indigo-900) 5%);
+  color: color-mix(in srgb, var(--color-white) 85%, transparent);
+}
+
+@layer utilities {
+  article a {
+    font-family: var(--font-family-sans);
+    color: currentColor;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-color: color-mix(in srgb, var(--color-black) 15%, transparent);
+    transition-property: color, text-decoration-color;
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+  }
+  
+  article a:where(.dark, .dark *) {
+    text-decoration-color: color-mix(in srgb, var(--color-white) 30%, transparent);
+  }
+  
+  article a:hover {
+    color: var(--color-black);
+    text-decoration-color: color-mix(in srgb, var(--color-black) 25%, transparent);
+  }
+  
+  article a:hover:where(.dark, .dark *) {
+    color: var(--color-white);
+    text-decoration-color: color-mix(in srgb, var(--color-white) 50%, transparent);
+  }
+
+  article img {
+    border-radius: 8px;
+  }
+
+  .prose :where(hr):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+        border-color: var(--tw-prose-th-borders);
+        margin-top: 1.25em;
+        margin-bottom: 1.25em;
+    }
+
+    .prose :where(blockquote):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+      border-inline-start-color: var(--tw-prose-th-borders);
+  }
+}
+
+.animate {
+  opacity: 0;
+  transform: translateY(--spacing(3));
+  transition-property: all;
+  transition-duration: 700ms;
+  transition-timing-function: ease-out;
+}
+
+.animate.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+html #back-to-top {
+  opacity: 0;
+  pointer-events: none;
+}
+
+html.scrolled #back-to-top {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+.wave { 
+  display: inline-block;
+  animation: wave 2.5s ease-in-out 2;
+  transform-origin: 70% 70%;
+  will-change: transform;
+}

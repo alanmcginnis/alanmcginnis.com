@@ -1,0 +1,4 @@
+---
+alwaysApply: true
+---
+- Do not run `npm run build` or any related build commands. When you are done, notify me and I will determine if I need to build.
