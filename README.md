@@ -1,6 +1,4 @@
-[Alan McGinnis](https://alanmcginnis.com) is a static, minimalist, lightweight, lightning fast human being.
-
-Built with coffee, curiosity and determination, and no framework dependencies.
+[alanmcginnis.com](https://alanmcginnis.com)
 
 Based on [Astro Nano](https://github.com/markhorn-dev/astro-nano)
 
