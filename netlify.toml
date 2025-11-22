@@ -61,6 +61,17 @@
   status = 301
   force = true
 
+# Redirect old project-talk URLs to highlights
+[[redirects]]
+  from = "/project-talk/portal-makeover/*"
+  to = "/highlights/portal-makeover/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/project-talk/fullstory-adoption/*"
+  to = "/highlights/fullstory-adoption/:splat"
+  status = 301
+
 # 404 page (Astro generates this automatically)
 [[redirects]]
   from = "/*"
