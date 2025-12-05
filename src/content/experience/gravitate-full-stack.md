@@ -7,8 +7,8 @@ dateStart: 02/01/2018
 dateEnd: 02/01/2019
 ---
 
-- Developed custom WordPress themes, plugins, and APIs for enterprise clients including universities, major retailers, and cybersecurity companies
-- Built responsive web applications with cross-browser, cross-device compatibility
-- Mentored junior developers through code reviews and pair programming
-- Wrote technical specifications and estimates for proposals that helped secure new client work
-- Translated client requirements into actionable development plans
+- ⌨️ Developed custom WordPress themes, plugins, and APIs for enterprise clients including universities, major retailers, and cybersecurity companies
+- 🌐 Built responsive web applications with cross-browser, cross-device compatibility
+- 👨‍🏫 Mentored junior developers through code reviews and pair programming
+- 🖊️ Wrote technical specifications and estimates for proposals that helped secure new client work
+- 🗣️ Translated client requirements into actionable development plans
