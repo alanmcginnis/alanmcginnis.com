@@ -13,3 +13,6 @@ dateEnd: 01/01/2018
 - 🤝 Collaborated with design and SEO teams to create integrated digital experiences
 - 📈 Improved conversion rates and user engagement metrics through optimized web solutions
 
+
+
+

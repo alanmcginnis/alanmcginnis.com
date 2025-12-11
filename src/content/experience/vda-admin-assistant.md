@@ -12,3 +12,6 @@ dateEnd: 02/01/2016
 - 💼 Utilized Little Green Light donor management software to track constituent relationships and support fundraising initiatives
 - 🤝 Collaborated with board members and business owners to promote downtown events and economic development
 - 🎯 Created and implemented targeted digital campaigns and website enhancements
+
+
+
