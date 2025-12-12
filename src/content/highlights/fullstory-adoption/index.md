@@ -5,7 +5,7 @@ date: "2024-03-01"
 image: "/images/fullstory.jpeg"
 ---
 
-![Picture of a analytics dashboard](/fullstory.jpeg)
+![Picture of a analytics dashboard](/images/fullstory.jpeg)
 
 ## Overview
 

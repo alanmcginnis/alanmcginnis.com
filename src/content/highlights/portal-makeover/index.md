@@ -5,7 +5,7 @@ date: "2025-10-01"
 image: "/images/portal-makeover.jpeg"
 ---
 
-![Picture of the employee portal after updates](/portal-makeover.jpeg)
+![Picture of the employee portal after updates](/images/portal-makeover.jpeg)
 
 ## Overview
 
