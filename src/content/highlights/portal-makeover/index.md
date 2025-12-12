@@ -2,7 +2,7 @@
 title: "Employee Portal Makeover"
 description: "Modern Laravel and Vue.js rebuild."
 date: "2025-10-01"
-image: "/portal-makeover.jpeg"
+image: "/images/portal-makeover.jpeg"
 ---
 
 ![Picture of the employee portal after updates](/portal-makeover.jpeg)

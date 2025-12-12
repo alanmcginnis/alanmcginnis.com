@@ -15,7 +15,7 @@ cd "$SCRIPT_DIR/.."
 npm run build
 
 echo "Syncing files to Pi..."
-rsync -avz --delete --exclude='start-server.sh' dist/ $REMOTE_USER@$PI_IP:$APP_DIR/
+rsync -avz --delete --exclude='start-server.sh' --exclude='ecosystem.config.js' dist/ $REMOTE_USER@$PI_IP:$APP_DIR/
 
 # No restart needed - Python HTTP server automatically serves new files
 echo "Quick deployment complete! Site updated at http://$PI_IP:3001"

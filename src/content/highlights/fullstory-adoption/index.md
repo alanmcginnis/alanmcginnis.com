@@ -2,7 +2,7 @@
 title: "Fullstory Adoption"
 description: "Transformed underutilized platform into a single source of truth."
 date: "2024-03-01"
-image: "/fullstory.jpeg"
+image: "/images/fullstory.jpeg"
 ---
 
 ![Picture of a analytics dashboard](/fullstory.jpeg)
