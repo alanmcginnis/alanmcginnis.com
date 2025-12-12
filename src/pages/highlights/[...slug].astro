@@ -6,6 +6,7 @@ import Container from "@components/Container.astro";
 // import { readingTime } from "@lib/utils";
 import BackToPrev from "@components/BackToPrev.astro";
 import ArrowCard from "@components/ArrowCard.astro";
+import { SITE } from "@consts";
 
 export async function getStaticPaths() {
   const highlights = (await getCollection("highlights"))
@@ -25,9 +26,61 @@ const { Content } = await highlight.render();
 const allHighlights = (await getCollection("highlights"))
   .filter(h => !h.data.draft && h.slug !== highlight.slug)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+// Article schema for structured data
+const siteUrl = "https://alanmcginnis.com";
+const articleUrl = new URL(`/highlights/${highlight.slug}`, siteUrl).href;
+const articleImage = highlight.data.image 
+  ? new URL(highlight.data.image, siteUrl).href 
+  : undefined;
+
+// Convert date to ISO 8601 format
+const datePublished = highlight.data.date.toISOString();
+
+// Get article body as plain text (strip markdown formatting)
+let articleBody = highlight.data.description;
+if (highlight.body) {
+  // Convert markdown body to plain text by stripping markdown syntax
+  articleBody = highlight.body
+    .replace(/^#+\s+/gm, "$1") // Remove headers
+    .replace(/\*\*(.*?)\*\*/g, "$1") // Remove bold
+    .replace(/\*(.*?)\*/g, "$1") // Remove italic
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1") // Remove links, keep text
+    .replace(/!\[([^\]]*)\]\([^)]+\)/g, "$1") // Remove images
+    .replace(/`([^`]+)`/g, "$1") // Remove inline code
+    .replace(/```[\s\S]*?```/g, "$1") // Remove code blocks
+    .replace(/^[-*+]\s+/gm, "$1") // Remove list markers
+    .replace(/^\d+\.\s+/gm, "$1") // Remove numbered list markers
+    .replace(/>\s+/g, "$1") // Remove blockquote markers
+    .trim();
+}
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: highlight.data.title,
+  description: highlight.data.description,
+  datePublished: datePublished,
+  author: {
+    "@type": "Person",
+    name: SITE.NAME,
+    url: siteUrl,
+  },
+  publisher: {
+    "@type": "Person",
+    name: SITE.NAME,
+    url: siteUrl,
+  },
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": articleUrl,
+  },
+  ...(articleImage && { image: articleImage }),
+  articleBody: articleBody,
+};
 ---
 
-<PageLayout title={highlight.data.title} description={highlight.data.description} image={highlight.data.image}>
+<PageLayout title={highlight.data.title} description={highlight.data.description} image={highlight.data.image} structuredData={articleSchema}>
   <Container>
     <div class="animate">
       <BackToPrev href="/">
@@ -35,15 +88,6 @@ const allHighlights = (await getCollection("highlights"))
       </BackToPrev>
     </div>
     <div class="space-y-1 my-10">
-      <!-- <div class="animate flex items-center gap-1.5">
-        <div class="font-base text-sm">
-          <FormattedDate date={highlight.data.date} />
-        </div>
-        &bull;
-        <div class="font-base text-sm">
-          {readingTime(highlight.body)}
-        </div>
-      </div> -->
       <div class="animate text-2xl font-semibold text-black dark:text-white">
         {highlight.data.title}
       </div>

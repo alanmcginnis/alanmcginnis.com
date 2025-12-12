@@ -4,14 +4,16 @@ import "@fontsource/atkinson-hyperlegible-next/latin-700.css";
 import "../styles/global.css";
 
 import { ClientRouter } from "astro:transitions";
+import StructuredData from "@components/StructuredData.astro";
 
 interface Props {
   title: string;
   description: string;
   image?: string;
+  structuredData?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const { title, description, image = "/og-default.jpg" } = Astro.props;
+const { title, description, image = "/og-default.jpg", structuredData } = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -38,6 +40,14 @@ const { title, description, image = "/og-default.jpg" } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+{structuredData && (
+  Array.isArray(structuredData) ? (
+    structuredData.map((schema) => <StructuredData schema={schema} />)
+  ) : (
+    <StructuredData schema={structuredData} />
+  )
+)}
 
 <ClientRouter  />
 

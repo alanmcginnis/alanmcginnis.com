@@ -17,9 +17,39 @@ const work = (await getCollection("experience"))
   .sort((a, b) => new Date(b.data.dateStart).valueOf() - new Date(a.data.dateStart).valueOf())
   .slice(0,SITE.NUM_EXPERIENCES_ON_HOMEPAGE);
 
+// Person schema for structured data
+const siteUrl = "https://alanmcginnis.com";
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: SITE.NAME,
+  email: SITE.EMAIL,
+  url: siteUrl,
+  image: `${siteUrl}/images/profile-200.webp`,
+  jobTitle: "Technology Leader",
+  description: HOME.DESCRIPTION,
+  sameAs: SOCIALS.map(social => social.HREF),
+};
+
+// WebSite schema for structured data
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE.NAME,
+  url: siteUrl,
+  description: HOME.DESCRIPTION,
+  publisher: {
+    "@type": "Person",
+    name: SITE.NAME,
+  },
+};
+
+// Combine schemas for homepage
+const homepageSchemas = [personSchema, websiteSchema];
+
 ---
 
-<PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
+<PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION} structuredData={homepageSchemas}>
   <Container>
     <div class="animate mb-6">
       <img
