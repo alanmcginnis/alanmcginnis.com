@@ -121,3 +121,10 @@ html.scrolled #back-to-top {
   transform-origin: 70% 70%;
   will-change: transform;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .wave {
+    animation: none;
+    will-change: auto;
+  }
+}
