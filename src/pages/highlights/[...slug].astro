@@ -87,20 +87,18 @@ const articleSchema = {
         Back to home
       </BackToPrev>
     </div>
-    <div class="space-y-1 my-10">
-      <div class="animate text-2xl font-semibold text-black dark:text-white">
-        {highlight.data.title}
-      </div>
-    </div>
     <article class="animate prose prose-stone dark:prose-invert max-w-none">
+      <h1 class="text-2xl font-semibold text-black dark:text-white mb-10">
+        {highlight.data.title}
+      </h1>
       <Content />
     </article>
 
     {allHighlights.length > 0 && (
       <div class="animate mt-16 space-y-4">
-        <h5 class="font-semibold text-black dark:text-white">
+        <h2 class="text-xl font-semibold text-black dark:text-white">
           Other Highlights
-        </h5>
+        </h2>
         <ul class="flex flex-col gap-4">
           {allHighlights.map((otherHighlight) => (
             <li>

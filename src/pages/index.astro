@@ -64,30 +64,30 @@ const homepageSchemas = [personSchema, websiteSchema];
         class="w-[100px] h-[100px] rounded-xl object-cover mb-4"
         loading="eager"
       />
-      <h4 class="font-semibold text-black dark:text-white">
+      <h1 class="text-2xl font-semibold text-black dark:text-white">
         Hi, I'm Alan McGinnis <span class="text-xl wave">👋🏻</span> 
-      </h4>
+      </h1>
     </div>
     <div class="space-y-6 md:space-y-10">
       <section>
-        <article class="space-y-4">
+        <div class="space-y-4">
           <p class="animate">
             I help teams solve complex problems and drive measurable business results. Over the past decade, I've worked across technical implementation, client relationships, team leadership, and business development, always ensuring investments pay off. I think in outcomes, not outputs, and move fluidly between technical architecture, project execution, and business strategy.
           </p>
-        </article>
+        </div>
       </section>
 
       <!-- Highlight section -->
       <section id="highlights" class="animate space-y-6">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h5 class="font-semibold text-black dark:text-white">
+          <h2 class="text-xl font-semibold text-black dark:text-white">
             Highlights
-          </h5>
-          <article>
+          </h2>
+          <div>
             <p>
               Project highlights showcasing different problems I've solved and the outcomes delivered.
             </p>
-          </article>
+          </div>
         </div>
         <ul class="flex flex-col gap-4">
           {highlights.map(highlight => (
@@ -101,9 +101,9 @@ const homepageSchemas = [personSchema, websiteSchema];
       <!-- Work experience section -->
       <section id="experience" class="animate space-y-6">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h5 class="font-semibold text-black dark:text-white">
+          <h2 class="text-xl font-semibold text-black dark:text-white">
             Recent Experience
-          </h5>
+          </h2>
           <Link href="/experience">
             See all
           </Link>
@@ -112,16 +112,16 @@ const homepageSchemas = [personSchema, websiteSchema];
           {work.map(entry => (
             <li class="space-y-2">
               <div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-3">
-                <div class="text-lg font-semibold text-black dark:text-white">
+                <h3 class="text-lg font-semibold text-black dark:text-white">
                   {entry.data.company}
-                </div>
+                </h3>
                 <div class="text-sm opacity-60">
                   {entry.data.featuredDate || dateRange(entry.data.dateStart, entry.data.dateEnd)}
                 </div>
               </div>
-              <div class="text-sm font-medium opacity-75">
+              <p class="text-sm font-medium opacity-75">
                 {entry.data.role}
-              </div>
+              </p>
               {entry.data.blurb && (
                 <p class="text-sm opacity-90 leading-relaxed">
                   {entry.data.blurb}
@@ -134,14 +134,14 @@ const homepageSchemas = [personSchema, websiteSchema];
 
       <!-- Connect section -->
       <section id="connect" class="animate space-y-4">
-        <h5 class="font-semibold text-black dark:text-white">
+        <h2 class="text-xl font-semibold text-black dark:text-white">
           Let's Connect
-        </h5>
-        <article>
+        </h2>
+        <div>
           <p>
             Find me online. I'm always open to new opportunities and conversations.
           </p>
-        </article>
+        </div>
         <ul class="flex flex-wrap gap-2">
           {SOCIALS.map(SOCIAL => (
             <li class="flex gap-x-2 text-nowrap">
