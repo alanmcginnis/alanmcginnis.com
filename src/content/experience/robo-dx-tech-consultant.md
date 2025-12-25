@@ -7,8 +7,8 @@ dateStart: 04/09/2021
 dateEnd: 03/09/2022
 ---
 
-- 🚚 Delivered time-bound onboarding that enabled enterprise clients to implement Fullstory independently
-- 🕵️‍♂️ Evaluated client technical capabilities to build realistic, achievable implementation roadmaps
-- 📖 Created documentation that non-technical stakeholders could actually understand and execute
-- 🥳 Focused clients on early wins that demonstrated value quickly
-- 🏗️ Built implementation guides and templates that scaled across multiple clients
+- Delivered time-bound onboarding that enabled enterprise clients to implement Fullstory independently
+- Evaluated client technical capabilities to build realistic, achievable implementation roadmaps
+- Created documentation that non-technical stakeholders could actually understand and execute
+- Focused clients on early wins that demonstrated value quickly
+- Built implementation guides and templates that scaled across multiple clients

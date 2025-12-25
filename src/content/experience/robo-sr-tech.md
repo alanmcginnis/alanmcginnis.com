@@ -8,8 +8,8 @@ dateStart: 03/01/2022
 dateEnd: 11/07/2024
 ---
 
-- 📊 Led onboarding for 100+ enterprise clients, driving revenue growth through strategic programs
-- ℹ️ Managed technology integrations including APIs and third-party applications across client platforms
-- 👨‍🎤 Streamlined processes for efficiency while preserving customization for enterprise accounts
-- 🧑‍💻 Mentored five onboarding specialists while generating sales expansion leads
-- 💬 Created systematic processes to manage expectations and reduce chaos through proactive communication
+- Led onboarding for 100+ enterprise clients, driving revenue growth through strategic programs
+- Managed technology integrations including APIs and third-party applications across client platforms
+- Streamlined processes for efficiency while preserving customization for enterprise accounts
+- Mentored five onboarding specialists while generating sales expansion leads
+- Created systematic processes to manage expectations and reduce chaos through proactive communication
