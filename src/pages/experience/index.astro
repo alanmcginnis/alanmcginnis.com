@@ -19,19 +19,19 @@ const work = await Promise.all(
 
 <PageLayout title={EXPERIENCE.TITLE} description={EXPERIENCE.DESCRIPTION}>
   <Container>
-    <div class="animate">
+    <div>
       <BackToPrev href="/">
         Back to home
       </BackToPrev>
     </div>
     <div class="space-y-10 my-10">
-      <h1 class="text-2xl animate font-semibold text-black dark:text-white">
+      <h1 class="text-2xl font-semibold text-black dark:text-white">
         Work
       </h1>
       <ul class="flex flex-col space-y-4">
         { 
           work.map(entry => (
-            <li class="animate">
+            <li>
               <h2 class="text-lg font-semibold text-black dark:text-white">
                 {entry.data.company}
               </h2>

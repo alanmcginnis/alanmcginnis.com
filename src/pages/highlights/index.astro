@@ -13,10 +13,10 @@ const highlights = (await getCollection("highlights"))
 <PageLayout title={HIGHLIGHTS.TITLE} description={HIGHLIGHTS.DESCRIPTION}>
   <Container>
     <div class="space-y-10">
-      <h1 class="text-2xl animate font-semibold text-black dark:text-white">
+      <h1 class="text-2xl font-semibold text-black dark:text-white">
         Highlights
       </h1>
-      <ul class="animate flex flex-col gap-4">
+      <ul class="flex flex-col gap-4">
         {
           highlights.map((highlight) => (
             <li>
