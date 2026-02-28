@@ -24,4 +24,7 @@ pnpm-debug.log*
 # Me Things
 _TODO.md
 **/_*/
+!_Notes/
+_Notes/*.md
+!_Notes/Dev_Log.md
 **/*.zip
