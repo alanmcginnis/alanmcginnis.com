@@ -5,7 +5,7 @@ date: "2025-10-01"
 image: "/images/portal-makeover.jpeg"
 ---
 
-![Picture of the employee portal after updates](/images/portal-makeover.jpeg)
+![The dashboard a user is navigated to once logged in. The sidebar navigation is clear and consistent with the wayfinding panels located on the dashboard. Adminstrators see an option for site management which is not be shown for standard users.](/images/portal-makeover.jpeg)
 
 ## Overview
 

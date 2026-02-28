@@ -5,7 +5,7 @@ date: "2024-03-01"
 image: "/images/fullstory.jpeg"
 ---
 
-![Picture of a analytics dashboard](/images/fullstory.jpeg)
+![Fullstory analytics dashboard showing a grid of colored metric cards for various key performance indicators](/images/fullstory.jpeg)
 
 ## Overview
 
