@@ -28,9 +28,9 @@ I approached it as a technology partner—regular check-ins, working prototypes,
 
 The CSV import system was the standout feature. Upload a spreadsheet instead of writing SQL, with 24-hour rollback for peace of mind. They finally had control over their own data management.
 
-> "I have to tell you that you're excellent at what you do, and you're going to go far with this. When you start growing your business and need investors, look me up! It's clear that you put serious thought into everything you build and make it as simple as possible for the end user. Most sincere kudos!"
-> 
-> — Mechanical Contractor
+> I have to tell you that you're excellent at what you do, and you're going to go far with this. When you start growing your business and need investors, look me up! It's clear that you put serious thought into everything you build and make it as simple as possible for the end user. Most sincere kudos!
+
+— Jeremy, Mechanical Contractor
 
 ## Tech Stack
 
