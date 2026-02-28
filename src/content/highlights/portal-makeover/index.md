@@ -5,7 +5,7 @@ date: "2025-10-01"
 image: "/images/portal-makeover.jpeg"
 ---
 
-![The dashboard a user is navigated to once logged in. The sidebar navigation is clear and consistent with the wayfinding panels located on the dashboard. Adminstrators see an option for site management which is not be shown for standard users.](/images/portal-makeover.jpeg)
+![Redesigned employee portal dashboard showing a modern, simplified layout with left-side navigation and large cards for common actions like Create New and View All.](/images/portal-makeover.jpeg)
 
 ## Overview
 
